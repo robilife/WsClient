@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.robilife.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.robilife.com/">
+
+<xs:element name="addPersonne" type="tns:addPersonne"/>
+
+<xs:element name="addPersonneResponse" type="tns:addPersonneResponse"/>
+
+<xs:element name="deletePersonne" type="tns:deletePersonne"/>
+
+<xs:element name="deletePersonneResponse" type="tns:deletePersonneResponse"/>
+
+<xs:element name="getPersonneById" type="tns:getPersonneById"/>
+
+<xs:element name="getPersonneByIdResponse" type="tns:getPersonneByIdResponse"/>
+
+<xs:element name="personne" type="tns:personne"/>
+
+<xs:element name="personneList" type="tns:personneList"/>
+
+<xs:element name="personneListResponse" type="tns:personneListResponse"/>
+
+<xs:element name="updatePersonne" type="tns:updatePersonne"/>
+
+<xs:element name="updatePersonneResponse" type="tns:updatePersonneResponse"/>
+
+<xs:complexType name="getPersonneById">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPersonneByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personne" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personne">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="prenom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletePersonne">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletePersonneResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPersonne">
+<xs:sequence>
+<xs:element name="arg0" type="tns:personne" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPersonneResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personneList">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="personneListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personne" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePersonne">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"/>
+<xs:element name="arg1" type="tns:personne" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePersonneResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
